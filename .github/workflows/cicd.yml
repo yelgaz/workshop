@@ -49,17 +49,11 @@ jobs:
         with:
           name: .net-app
       
-      - name: Login to Azure
-        uses: azure/login@v1
-        with:
-          client-id: ${{ secrets.USERNAME }}
-          tenant-id: ${{ secrets.PASSWORD }}
-          subscription-id: ${{ secrets.__subscriptionidsecretname__ }}
-
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
+          publish-profile: ${{ secrets.PROFILE }}
           app-name: 'OmerFarukYilmaz'
           slot-name: 'production'
           package: .
