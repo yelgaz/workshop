@@ -54,7 +54,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           publish-profile: ${{ secrets.PROFILE }}
-          app-name: 'yelgaz'
+          app-name: 'elgaz'
           slot-name: 'production'
           package: .
           
